@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Member Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+
+<h1>Customer Registration</h1>
+
+<form id="registrationForm" class="form">
+    <label for="membership">Choose a membership</label>
+    <select name="membership" id="membership">
+        <option value="">Choose a membership</option>
+        <option value="VIP">VIP</option>
+        <option value="regular">Regular</option>
+        <option value="basic">Basic</option>
+    </select>
+    <br>
+
+    <label for="firstname">Firstname</label>
+    <input type="text" id="firstname" required>
+    <span id="wrongFirstname" style="color:red"></span>
+    <br>
+
+    <label for="lastname">Lastname</label>
+    <input type="text" id="lastname" required>
+    <span id="wrongLastname" style="color:red"></span>
+    <br>
+
+    <label for="age">Age</label>
+    <input type="text" id="age" required>
+    <span id="wrongAge" style="color:red"></span>
+    <br>
+
+    <label for="telf">Telf</label>
+    <input type="text" id="telf" onchange="validateTelefonNr()">
+    <span id="wrongTlf" style="color:red"></span>
+    <br>
+
+    <label for="email">Email</label>
+    <input type="text" id="email" onchange="validateEmail()">
+    <span id="wrongEmail" style="color:red"></span>
+    <br>
+
+    <button type="button" onclick="sendForm()">Send Form</button>
+</form>
+
+<span id="fail" style="color:red"></span>
+
+<h2>All Members</h2>
+<div id="memberList"></div>
+
+<!-- Login Form -->
+<!-- Login Form -->
+<h2>Login</h2>
+<form id="loginForm" class="form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <button type="button" onclick="login()">Login</button>
+    <!-- Add the logout button -->
+    <button type="button" onclick="logout()">Logout</button>
+</form>
+
+
+<!-- Button to delete underage members -->
+<button id="deleteUnderageButton" onclick="deleteUnderageMembers()" style="display: none;">Delete Underage Members</button>
+
+</body>
+</html>
